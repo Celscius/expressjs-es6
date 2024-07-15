@@ -3,6 +3,7 @@ import express from 'express'
 import path from 'path'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
+import cons from 'consolidate'
 
 import indexRouter from './routes/index.js'
 import usersRouter from './routes/users.js'
@@ -13,8 +14,13 @@ var app = express();
 const __dirname = import.meta.dirname;
 
 // view engine setup
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('view engine', 'jade');
+
+// view engine setup
+app.engine('html', cons.swig)
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'html');
 
 app.use(logger('dev'));
 app.use(express.json());
