@@ -7,6 +7,7 @@
 import app from '../app.mjs'
 import DBG from 'debug'
 import http from 'http'
+import os from 'os'
 
 const debug = DBG('notes:server-debug'); 
 const error = DBG('notes:server-error'); 
@@ -32,7 +33,7 @@ app.set('port', port);
   os.hostname(); //get host name e.g collasour
 */
 
-import os from 'os'
+
 const networkInterfaces = os.networkInterfaces();
 const wifi = "Wi-Fi"
 const loopback = "Loopback Pseudo-Interface 1"
