@@ -8,6 +8,7 @@ import app from '../app.mjs'
 import DBG from 'debug'
 import http from 'http'
 import os from 'os'
+import 'dotenv/config'
 
 const debug = DBG('notes:server-debug'); 
 const error = DBG('notes:server-error'); 
